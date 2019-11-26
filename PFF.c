@@ -30,13 +30,6 @@ int transferencia( void *threadarg)
 }
 int main()
 {
-    printf("1. A conta to pode receber mais de uma transferência simultânea.")
-    printf("2. A conta from pode enviar mais de uma transferência simultânea.")
-    printf("3.A conta from não pode enviar dinheiro se não tiver mais saldo.")
-    printf("4.A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar.")
-    printf("5.Poderão ser realizadas até 100 transações simultâneas de transferência.")
-    
-    
         void* stack;
         pid_t pid;
         int i;
