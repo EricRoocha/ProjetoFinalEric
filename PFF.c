@@ -54,12 +54,11 @@ int main()
 {
 	void* stack;
 	pid_t pid;
-	int i, j;
+	int i, j, valorrand1, valorrand2;
 
 	from.saldo = 100;
         to.saldo = 100;
 
-	bool travavalor = false;
 	printf( "Transferindo 1 para a conta c2\n" );
 
         valorrand1 = rand() & 1;
