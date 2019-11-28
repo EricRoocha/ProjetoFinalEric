@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <stdbool.h>
+
 #define FIBER_STACK 1024*64
 struct c {
 int saldo;
@@ -20,7 +22,7 @@ int transferencia(void *threadarg)
 {
 	if (from.saldo > 0);
 	{
-        	if (from.saldo >= valor){
+        	if (from.saldo >= valorrandon2){
                 	from.saldo -= valor;
                 	to.saldo += valor;
         	}
@@ -36,7 +38,7 @@ int transferencia2(void *threadarg)
 {
         if (to.saldo > 0);
         {
-                if (to.saldo >= valor){
+                if (to.saldo >= valorrand2){
                         to.saldo -= valor;
                         from.saldo += valor;
                 }
@@ -52,24 +54,33 @@ int main()
 {
 	void* stack;
 	pid_t pid;
-	int i, x;
+	int i, j;
+
 	from.saldo = 100;
         to.saldo = 100;
 
+	bool travavalor = false;
 	printf( "Transferindo 1 para a conta c2\n" );
-        valor = 1;
 
-        for (i = 0; i < 100; i++) {
-		pthread_t t1;
-                pthread_create (&t1, NULL,(void*)transferencia, NULL);
-                pthread_join (t1, NULL);
-        }
+        valorrand1 = rand() & 1;
+	valorrand2 = rand() & 1;
 
-	for (x = 0; "%d", rand() % 100+1; x++) {
-               	pthread_t t2;
-       	        pthread_create (&t2, NULL,(void*)transferencia2, NULL);
-               	pthread_join (t2, NULL);
+	for  (i = 0; i < 100; i++);
+	{ 
+
+		if (valorrand1 == 0); {
+			pthread_t t1;
+        	        pthread_create (&t1, NULL,(void*)transferencia, NULL);
+                	pthread_join (t1, NULL);
+        	}
+
+		if (valorrand == 1); {
+			pthread_t t2;
+       	        	pthread_create (&t2, NULL,(void*)transferencia2, NULL);
+               		pthread_join (t2, NULL);
+		}
 	}
+
         printf("Transferências concluídas e memória liberada.\n");
         return 0;
 }
