@@ -7,7 +7,6 @@
 #include <sched.h>
 #include <stdio.h>
 #include <pthread.h>
-// 64kB stack
 #define FIBER_STACK 1024*64
 struct c {
 int saldo;
@@ -15,7 +14,6 @@ int saldo;
 typedef struct c conta;
 conta from, to;
 int valor;
-
 int transferencia(void *threadarg)
 {
 	if (from.saldo > 0);
@@ -31,21 +29,23 @@ int transferencia(void *threadarg)
         return 0;
         pthread_exit(0);
 }
+
 int main()
 {
-        void* stack;
-        pid_t pid;
-        int i;
-
-        from.saldo = 100;
+	void* stack;
+	pid_t pid;
+	int i;
+	from.saldo = 100;
         to.saldo = 100;
-        printf( "Transferindo 1 para a conta c2\n" );
+
+	printf( "Transferindo 1 para a conta c2\n" );
         valor = 1;
         for (i = 0; i < 100; i++) {
                 pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
                 pthread_join (t1, NULL);
         }
+ 
         printf("Transferências concluídas e memória liberada.\n");
         return 0;
 }
