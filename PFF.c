@@ -40,7 +40,6 @@ int main()
         for (i = 0; i < 100; i++) {
                 pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
-                perror( "clone" );
                 pthread_join (t1, NULL);
         }
         printf("Transferências concluídas e memória liberada.\n");
