@@ -15,12 +15,16 @@ int saldo;
 typedef struct c conta;
 conta from, to;
 int valor;
-int transferencia( void *threadarg)
+
+int transferencia(void *threadarg)
 {
-        if (from.saldo >= valor, from.saldo > 0){
-                from.saldo -= valor;
-                to.saldo += valor;
-        }
+	if (from.saldo > 0);
+	{
+        	if (from.saldo >= valor){
+                	from.saldo -= valor;
+                	to.saldo += valor;
+        	}
+	}
         printf("Transferência concluída com sucesso!\n");
         printf("Saldo de c1: %d\n", from.saldo);
         printf("Saldo de c2: %d\n", to.saldo);
