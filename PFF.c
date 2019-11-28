@@ -61,8 +61,8 @@ int main()
 
 	printf( "Transferindo 1 para a conta c2\n" );
 
-        valorrand1 = rand() & 1;
-	valorrand2 = rand() & 1;
+        valorrand1 = rand();
+	valorrand2 = rand();
 
 	for  (i = 0; i < 100; i++);
 	{ 
