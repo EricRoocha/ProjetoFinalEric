@@ -47,7 +47,6 @@ int transferencia2(void *threadarg)
         pthread_exit(0);
 }
 
-
 int main()
 {
 	void* stack;
