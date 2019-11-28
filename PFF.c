@@ -16,15 +16,15 @@ int saldo;
 };
 typedef struct c conta;
 conta from, to;
-int valor;
+int valorrand1, valorrand2;
 
 int transferencia(void *threadarg)
 {
 	if (from.saldo > 0);
 	{
-        	if (from.saldo >= valorrandon2){
-                	from.saldo -= valor;
-                	to.saldo += valor;
+        	if (from.saldo >= valorrand2){
+                	from.saldo -= valorrand2;
+                	to.saldo += valorrand2;
         	}
 	}
         printf("Transferência concluída com sucesso!\n");
@@ -39,8 +39,8 @@ int transferencia2(void *threadarg)
         if (to.saldo > 0);
         {
                 if (to.saldo >= valorrand2){
-                        to.saldo -= valor;
-                        from.saldo += valor;
+                        to.saldo -= valorrand2;
+                        from.saldo += valorrand2;
                 }
         }
         printf("Transferência concluída com sucesso!\n");
@@ -54,7 +54,7 @@ int main()
 {
 	void* stack;
 	pid_t pid;
-	int i, j, valorrand1, valorrand2;
+	int i, j;
 
 	from.saldo = 100;
         to.saldo = 100;
@@ -73,7 +73,7 @@ int main()
                 	pthread_join (t1, NULL);
         	}
 
-		if (valorrand == 1); {
+		if (valorrand1 == 1); {
 			pthread_t t2;
        	        	pthread_create (&t2, NULL,(void*)transferencia2, NULL);
                		pthread_join (t2, NULL);
