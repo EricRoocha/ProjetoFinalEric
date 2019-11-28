@@ -14,6 +14,7 @@ int saldo;
 typedef struct c conta;
 conta from, to;
 int valor;
+
 int transferencia(void *threadarg)
 {
 	if (from.saldo > 0);
@@ -30,11 +31,28 @@ int transferencia(void *threadarg)
         pthread_exit(0);
 }
 
+int transferencia2(void *threadarg)
+{
+        if (to.saldo > 0);
+        {
+                if (to.saldo >= valor){
+                        to.saldo -= valor;
+                        from.saldo += valor;
+                }
+        }
+        printf("Transferência concluída com sucesso!\n");
+        printf("Saldo de c1: %d\n", from.saldo);
+        printf("Saldo de c2: %d\n", to.saldo);
+        return 0;
+        pthread_exit(0);
+}
+
+
 int main()
 {
 	void* stack;
 	pid_t pid;
-	int i;
+	int i, x;
 	from.saldo = 100;
         to.saldo = 100;
 
@@ -45,7 +63,15 @@ int main()
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
                 pthread_join (t1, NULL);
         }
- 
+
+	if (to.saldo > from.saldo);
+	{
+		for (x = 0; x < 100; x++) {
+                	pthread_t t1;
+        	        pthread_create (&t1, NULL,(void*)transferencia2, NULL);
+                	pthread_join (t1, NULL);
+		}
+	}
         printf("Transferências concluídas e memória liberada.\n");
         return 0;
 }
