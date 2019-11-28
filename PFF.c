@@ -15,10 +15,9 @@ int saldo;
 typedef struct c conta;
 conta from, to;
 int valor;
-// The child thread will execute this function
 int transferencia( void *threadarg)
 {
-        if (from.saldo >= valor){
+        if (from.saldo >= valor, from.saldo > 0){
                 from.saldo -= valor;
                 to.saldo += valor;
         }
