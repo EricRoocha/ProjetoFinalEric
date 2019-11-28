@@ -33,7 +33,7 @@ int transferencia(void *threadarg)
 
 int transferencia2(void *threadarg)
 {
-        if (to.saldo > 0);
+        if (to.saldo >=  0);
         {
                 if (to.saldo >= valor){
                         to.saldo -= valor;
@@ -56,7 +56,7 @@ int main()
         to.saldo = 100;
 
 	printf( "Transferindo 1 para a conta c2\n" );
-        valor = 1;
+        valor = 0;
         for (i = 0; i < 100; i++) {
                 pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
@@ -66,9 +66,9 @@ int main()
 	if (to.saldo > from.saldo);
 	{
 		for (x = 0; x < from.saldo; x++) {
-                	pthread_t t1;
-        	        pthread_create (&t1, NULL,(void*)transferencia2, NULL);
-                	pthread_join (t1, NULL);
+                	pthread_t t2;
+        	        pthread_create (&t2, NULL,(void*)transferencia2, NULL);
+                	pthread_join (t2, NULL);
 		}
 	}
         printf("Transferências concluídas e memória liberada.\n");
