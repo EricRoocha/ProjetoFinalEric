@@ -65,7 +65,7 @@ int main()
 
 	if (to.saldo > from.saldo);
 	{
-		for (x = 0; x < 100; x++) {
+		for (x = 0; x < from.saldo; x++) {
                 	pthread_t t1;
         	        pthread_create (&t1, NULL,(void*)transferencia2, NULL);
                 	pthread_join (t1, NULL);
