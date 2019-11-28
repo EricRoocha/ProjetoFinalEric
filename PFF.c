@@ -6,6 +6,7 @@
 #include <signal.h>
 #include <sched.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <pthread.h>
 #define FIBER_STACK 1024*64
 struct c {
@@ -59,12 +60,12 @@ int main()
         valor = 1;
 
         for (i = 0; i < 100; i++) {
-                pthread_t t1;
+		pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
                 pthread_join (t1, NULL);
         }
 
-	for (x = 0; x < 200; x++) {
+	for (x = 0; "%d", rand() % 100+1; x++) {
                	pthread_t t2;
        	        pthread_create (&t2, NULL,(void*)transferencia2, NULL);
                	pthread_join (t2, NULL);
