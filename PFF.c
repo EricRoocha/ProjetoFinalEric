@@ -13,7 +13,7 @@ int saldo;
 };
 typedef struct c conta;
 conta from, to;
-int valor;
+int valor, valor2;
 
 int transferencia(void *threadarg)
 {
@@ -58,15 +58,16 @@ int main()
 
         printf( "Transferindo 1 para a conta c2\n" );
 
-        for (i = 0; i < 100; i++) {
-                valor = ( " %d ", rand() % 10);
+        for (i = 0; i < 50; i++) {
+                valor = ( " %d ", rand() % 5) +1;
 
                 pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
                 pthread_join (t1, NULL);
         }
 
-        for (x = 0; x < 200; x++) {
+        for (x = 0; x < 50; x++) {
+		valor2 = ( "%d ", rand() % 5) +1;
                 pthread_t t2;
                 pthread_create (&t2, NULL,(void*)transferencia2, NULL);
                 pthread_join (t2, NULL);
