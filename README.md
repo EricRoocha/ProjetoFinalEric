@@ -2,7 +2,7 @@
 Projeto final de Sistemas Operacionais
 
 Alunos:
-Diego Taynan Thomas Freitas RA:
+Diego Taynan Thomas Freitas RA: 21851347
 Eric Vinícvio Rocha França  RA: 21902089
 Mateus de Brito Bacelar     RA: 21905387
 
@@ -18,4 +18,7 @@ Caso não o tiver, baixe-o pelo link <https://git-scm.com/downloads> (Versão pa
 
 --- --- ---
 Para acessar no Windows: 
+
+
+
 
