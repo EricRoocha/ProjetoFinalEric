@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <stdbool.h>
 #define FIBER_STACK 1024*64
 
 struct c {
@@ -54,31 +53,25 @@ int transferencia2(void *threadarg)
 int main()
 {
 	void* stack;
-	pid_t pid;
-	int i, j, escolha;
+	int i, j;
+	int valorand;
+
+	pthread_t t1, t2;
 
 	from.saldo = 100;
         to.saldo = 100;
-
 	printf( "Transferindo 1 para a conta c2\n" );
 
 	valor = 1;
-        escolha = rand();
 
-	for  (i = 0; i < 100; i++);
-	{ 
+	if (valorand = 0); {
+                pthread_create (&t1, NULL,(void*)transferencia, NULL);
+		pthread_join (t1, NULL);
+	}
 
-		if (escolha == 0); {
-			pthread_t t1;
-        	        pthread_create (&t1, NULL,(void*)transferencia, NULL);
-                	pthread_join (t1, NULL);
-        	}
-
-		if (escolha == 1); {
-			pthread_t t2;
-       	        	pthread_create (&t2, NULL,(void*)transferencia2, NULL);
-               		pthread_join (t2, NULL);
-		}
+	if (valorand = 1); {
+		pthread_create (%t2, NULL,(void*)transferencia2, NULL);
+		pthread_join (t2, NULL);
 	}
 
         printf("Transferências concluídas e memória liberada.\n");
