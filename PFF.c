@@ -59,16 +59,16 @@ int main()
 
         printf( "Transferindo 1 para a conta c2\n" );
 	srand(time(0));
+	rotacao = ( "%d ", rand() % 100) +1;
 
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < 50; i++) {
                 valor = ( " %d ", rand() % 5) +1;
-
                 pthread_t t1;
                 pthread_create (&t1, NULL,(void*)transferencia, NULL);
                 pthread_join (t1, NULL);
         }
 
-        for (x = 0; x < 100; x++) {
+        for (x = 0; x < 50; x++) {
 		valor2 = ( "%d ", rand() % 5) +1;
                 pthread_t t2;
                 pthread_create (&t2, NULL,(void*)transferencia2, NULL);
