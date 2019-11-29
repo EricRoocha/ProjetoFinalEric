@@ -7,6 +7,7 @@
 #include <sched.h>
 #include <stdio.h>
 #include <pthread.h>
+#include <time.h>
 #define FIBER_STACK 1024*64
 struct c {
 int saldo;
@@ -57,8 +58,9 @@ int main()
         to.saldo = 100;
 
         printf( "Transferindo 1 para a conta c2\n" );
+	srand(time(0));
 
-        for (i = 0; i < 50; i++) {
+        for (i = 0; i < 100; i++) {
                 valor = ( " %d ", rand() % 5) +1;
 
                 pthread_t t1;
@@ -66,7 +68,7 @@ int main()
                 pthread_join (t1, NULL);
         }
 
-        for (x = 0; x < 50; x++) {
+        for (x = 0; x < 100; x++) {
 		valor2 = ( "%d ", rand() % 5) +1;
                 pthread_t t2;
                 pthread_create (&t2, NULL,(void*)transferencia2, NULL);
