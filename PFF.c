@@ -9,14 +9,15 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <stdbool.h>
-
 #define FIBER_STACK 1024*64
+
 struct c {
 int saldo;
 };
+
 typedef struct c conta;
 conta from, to;
-int valor, escolha;
+int valor;
 
 int transferencia(void *threadarg)
 {
@@ -54,13 +55,14 @@ int main()
 {
 	void* stack;
 	pid_t pid;
-	int i, j;
+	int i, j, escolha;
 
 	from.saldo = 100;
         to.saldo = 100;
 
 	printf( "Transferindo 1 para a conta c2\n" );
 
+	valor = 1;
         escolha = rand();
 
 	for  (i = 0; i < 100; i++);
