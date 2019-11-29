@@ -13,11 +13,12 @@ Caso não o tiver, baixe-o pelo link <https://git-scm.com/downloads> (Versão pa
 2º Abra o terminal no linux.
 3º Insira no Terminal: " mkdir {nome}" (Exemplo: " mkdir projeto ").
 4º Insira no terminal: " cd {nome}" (Exemplo: " cd projeto ").
-5º Insira no terminal: " cd ProjetoFinalEric ".
-6º Insira no terminal: " ./PFF.bin ".
+5º Insira no terminal: " git clone https://github.com/EricRoocha/ProjetoFinalEric.git ".
+6º Insira no terminal: " cd ProjetoFinalEric ".
+7º Insira no terminal: " ./PFF.bin ".
 
 --- --- ---
-Para acessar no Windows: 
+Para acessar no Windows: A biblioteca " pthreads " não existe no windows.  
 
 
 
